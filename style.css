@@ -189,11 +189,29 @@ body {
     text-transform: uppercase;
 }
 
-.messages {
+.messages-control {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 1.25rem;
+}
+
+.split-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1rem;
+}
+
+.left-line, .right-line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+.split-time span {
+    color: var(--gray);
+    font-size: .75rem;
 }
 
 .message {
