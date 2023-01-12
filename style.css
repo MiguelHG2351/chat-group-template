@@ -1,0 +1,287 @@
+:root {
+    --white: #E0E0E0;
+    --gray: #828282;
+    --light-gray: #3C393F;
+    --light-blue: #2F80ED;
+    --dark-blue: #252329;
+    --light-black: #120F13;
+    --dark-black: #0B090C;
+    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --shadow-sidenav: 0px 4px 4px rgba(0, 0, 0, 0.25);;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    background-color: var(--dark-blue);
+    margin: 0;
+}
+
+/* #region sidenav */
+.sidenav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: stretch;
+    transform: translateX(-100vw);
+}
+
+.sidenav.active {
+    transform: translateX(0);
+    transition: transform ease-in-out .2s;
+    
+}
+
+.sidenav.in-active {
+    transition: transform ease-in-out .2s;
+    transform: translateX(-100vw);
+}
+
+.container-sidenav {
+    background-color: var(--light-black);
+    display: flex;
+    flex-direction: column;
+}
+
+.container-sidenav {
+    flex: 1;
+}
+
+.header-sidenav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: var(--shadow-sidenav);
+}
+
+.sidenav-title {
+    margin: 0;
+}
+
+.btn-add-channel {
+    border: none;
+    background-color: var(--dark-blue);
+    width: 2rem;
+    text-align: center;
+    border-radius: .5rem;
+    aspect-ratio: 1 / 1;
+}
+.sidenav-content {
+    padding: 1rem;
+    flex: 1;
+}
+
+/* 
+.form-search {
+    margin: auto;
+} */
+.search {
+    display: flex;
+    flex: 1;
+    background-color: var(--light-gray);
+    border-radius: .75rem;
+    padding: .5rem .75rem;
+    gap: .25rem;
+}
+
+.input-search {
+    flex: 1;
+    padding: .25rem 0;
+    border: none;
+    outline: transparent;
+}
+
+.channel-list {
+    padding-left: 0;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: .75rem;
+}
+
+.channel-logo {
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+/* ------ */
+
+.footer-sidenav {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-black);
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.footer-picture {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+
+/* ------ */
+.close-sidenav {
+    padding: .5rem;
+}
+
+.btn-close {
+    aspect-ratio: 1 / 1;
+    border-radius: .75rem;
+    border: none;
+    background-color: var(--light-black);
+}
+
+/* #endregion */
+
+/* #region Channel */
+.container-channel {
+    display: grid;
+    grid-template-rows: 3.625rem calc(100vh - 3.625rem);
+}
+
+.header-page {
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+
+.btn-menu {
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+}
+
+.btn-menu svg {
+    vertical-align: middle;
+}
+
+.channel-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 1.25rem;
+}
+
+.message {
+    display: grid;
+    gap: 0 1rem;
+    grid-template-columns: 42px auto;
+}
+
+.message-picture img {
+    border-radius: .5rem;
+}
+
+.message-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+}
+
+.author {
+    font-size: 18px;
+    color: var(--gray);
+    margin: 0;
+}
+
+.time-ago {
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text {
+    margin: .5rem auto;
+    font-weight: 500;
+}
+
+.form-message {
+    margin: 1rem 0;
+}
+
+.form-message-container {
+    background-color: var(--light-gray);
+    padding: .25rem .75rem;
+    display: flex;
+    border-radius: .75rem;
+    overflow: hidden;
+}
+
+.input-message {
+    border: none;
+    font-size: 14px;
+    flex: 1;
+    outline: transparent;
+    background-color: var(--light-gray);
+}
+
+.btn-send {
+    aspect-ratio: 1 / 1;
+    border-radius: .5rem;
+    border: none;
+    height: 2.5rem;
+    background-color: var(--light-blue);
+}
+/* #endregion */
+
+/* #region desktop sidenav */
+@media screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 30% 1fr;
+    }
+    .sidenav {
+        position: static;
+    }
+    
+    .sidenav.active, .sidenav, .sidenav.in-active {
+        transform: translate(0);
+    }
+    .close-sidenav {
+        display: none;
+    }
+
+    .header-page {
+        padding-left: 3rem;
+    }
+    
+    .btn-menu {
+        display: none;
+    }
+}
+
+/* #endregion */
