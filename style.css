@@ -112,6 +112,11 @@ body {
     align-items: center;
     list-style: none;
     gap: .75rem;
+    cursor: pointer;
+}
+
+.channel-item-title {
+    user-select: none;
 }
 
 .channel-logo {
