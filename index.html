@@ -33,7 +33,7 @@
         <div class="container-sidenav">
           <div class="header-sidenav">
             <h2 class="sidenav-title">Channels</h2>
-            <button class="btn-add-channel">
+            <button class="btn-add-channel" id="open-portal">
               <svg
                 style="vertical-align: middle"
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,5 +179,16 @@
         </section>
       </div>
     </main>
+    <div class="overlay" id="overlay"></div>
+    <div class="portal" id="portal">
+      <form class="form-portal">
+        <h2 class="portal-title">New Channel</h2>
+        <div class="inputs-portal">
+          <input class="input-new-channel" type="text" placeholder="Channel name">
+          <textarea class="input-new-channel-description" rows="5" placeholder="Channel Description"></textarea>
+          <button class="btn-save" id="save-channel">Save</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

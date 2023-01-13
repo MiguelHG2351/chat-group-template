@@ -31,6 +31,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 10;
     display: flex;
     align-items: stretch;
     transform: translateX(-100vw);
@@ -182,7 +183,7 @@ body {
 }
 
 .channel-name {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--white);
     margin: 0;
@@ -194,6 +195,12 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 1.25rem;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem 0;
 }
 
 .split-time {
@@ -231,7 +238,7 @@ body {
 }
 
 .author {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--gray);
     margin: 0;
 }
@@ -274,6 +281,82 @@ body {
     height: 2.5rem;
     background-color: var(--light-blue);
 }
+/* #endregion */
+
+/* #region portals */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: none;
+    background-color: #120F1380;
+}
+
+.portal {
+    background-color: var(--light-black);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    width: 90%;
+    padding: 2rem;
+    border-radius: .75rem;
+    display: none;
+}
+
+.overlay.active, .portal.active {
+    display: block;
+}
+
+.portal-title {
+    margin: 0;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.inputs-portal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem 0;
+}
+
+.input-new-channel {
+    width: 100%;
+    border-radius: .5rem;
+    border: none;
+    outline: transparent;
+    padding: .75rem;
+    font-size: 1.125rem;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.input-new-channel-description {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.125rem;
+    outline: transparent;
+    padding: .75rem;
+    width: 100%;
+    min-height: 3.25rem;
+    resize: vertical;
+}
+
+.btn-save {
+    display: inline-block;
+    padding: .5rem 1.5rem;
+    outline: transparent;
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--light-blue);
+}
+
+/* .portal-title {
+} */
 /* #endregion */
 
 /* #region desktop sidenav */
